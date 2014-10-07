@@ -42,7 +42,8 @@ class SluggableBehavior extends Behavior {
      * @return type
      */
     public function findSlug(Query $query, array $options) {
-        return $query->where(['slug' => $options['slug']]);
+        $config = $this->config();
+        return $query->where([$config['slug'] => $options['slug']]);
     }
 
     /**

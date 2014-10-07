@@ -2,10 +2,10 @@
 
 namespace App\Model\Behavior;
 
-use App\Model\Behavior\Query;
-use Cake\ORM\Behavior;
 use Cake\Event\Event;
+use Cake\ORM\Behavior;
 use Cake\ORM\Entity;
+use Cake\ORM\Query;
 use Cake\Utility\Inflector;
 
 /**
@@ -42,7 +42,7 @@ class SluggableBehavior extends Behavior {
      * @return type
      */
     public function findSlug(Query $query, array $options) {
-        return $query->where(['slug' => $options['slug']]);
+        return $query->where([$this->config()['slug'] => $options['slug']]);
     }
 
     /**

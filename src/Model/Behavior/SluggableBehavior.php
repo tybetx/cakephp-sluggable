@@ -20,7 +20,10 @@ class SluggableBehavior extends Behavior {
     protected $_defaultConfig = [
         'field' => 'title',
         'slug' => 'slug',
-        'replacement' => '-'
+        'replacement' => '-',
+        'implementedMethods' => [
+            'slugged' => 'findSlug'
+        ]
     ];
 
     /**
@@ -29,7 +32,7 @@ class SluggableBehavior extends Behavior {
      */
     public function slug(Entity $entity) {
         $config = $this->config();
-        $entity->set($config['slug'], Inflector::slug($this->_unicode_convert($entity->get($config['field'])), $config['replacement']));
+        $entity->set($config['slug'], Inflector::slug($this->_removeSign($entity->get($config['field'])), $config['replacement']));
     }
 
     /**
@@ -56,30 +59,44 @@ class SluggableBehavior extends Behavior {
      * @param type $str
      * @return string
      */
-    protected function _unicode_convert($str) {
+    protected function _removeSign($str) {
         if (!$str)
-            return '';
-        $unicode = array(
-            'a' => array('á', 'à', 'ả', 'ã', 'ạ', 'ă', 'ắ', 'ặ', 'ằ', 'ẳ', 'ẵ', 'â', 'ấ', 'ầ', 'ẩ', 'ẫ', 'ậ'),
-            'A' => array('Á', 'À', 'Ả', 'Ã', 'Ạ', 'Ă', 'Ắ', 'Ặ', 'Ằ', 'Ẳ', 'Ẵ', 'Â', 'Ấ', 'Ầ', 'Ẩ', 'Ẫ', 'Ậ'),
-            'd' => array('đ'),
-            'D' => array('Đ'),
-            'e' => array('&eacute;', 'è', 'ẻ', 'ẽ', 'ẹ', 'ê', 'ế', 'ề', 'ể', 'ễ', 'ệ'),
-            'E' => array('&Eacute;', 'È', 'Ẻ', 'Ẽ', 'Ẹ', 'Ê', 'Ế', 'Ề', 'Ể', 'Ễ', 'Ệ'),
-            'i' => array('í', 'ì', 'ỉ', 'ĩ', 'ị'),
-            'I' => array('Í', 'Ì', 'Ỉ', 'Ĩ', 'Ị'),
-            'o' => array('ó', 'ò', 'ỏ', 'õ', 'ọ', 'ô', 'ố', 'ồ', 'ổ', 'ỗ', 'ộ', 'õ', 'ớ', 'ờ', 'ở', 'ỡ', 'ợ'),
-            '0' => array('Ó', 'Ò', 'Ỏ', 'Õ', 'Ọ', 'Ô', 'Ố', 'Ồ', 'Ổ', 'Ỗ', 'Ộ', 'Õ', 'Ớ', 'Ờ', 'Ở', 'Ỡ', 'Ợ'),
-            'u' => array('ú', 'ù', 'ủ', 'ũ', 'ụ', 'ý', 'ứ', 'ừ', 'ử', 'ữ', 'ự'),
-            'U' => array('Ú', 'Ù', 'Ủ', 'Ũ', 'Ụ', 'Ý', 'Ứ', 'Ừ', 'Ử', 'Ữ', 'Ự'),
-            'y' => array('ý', 'ỳ', 'ỷ', 'ỹ', 'ỵ'),
-            'Y' => array('Ý', 'Ỳ', 'Ỷ', 'Ỹ', 'Ỵ'),
-        );
-        foreach ($unicode as $nonUnicode => $uni) {
-            foreach ($uni as $value)
-                $str = str_replace($value, $nonUnicode, $str);
-        }
-        return $str;
+            return;
+        $signed = array("à", "á", "ạ", "ả", "ã", "â", "ầ", "ấ", "ậ", "ẩ", "ẫ", "ă", "ằ", "ắ"
+            , "ặ", "ẳ", "ẵ", "è", "é", "ẹ", "ẻ", "ẽ", "ê", "ề", "ế", "ệ", "ể", "ễ", "ì", "í", "ị", "ỉ", "ĩ",
+            "ò", "ó", "ọ", "ỏ", "õ", "ô", "ồ", "ố", "ộ", "ổ", "ỗ", "ơ"
+            , "ờ", "ớ", "ợ", "ở", "ỡ",
+            "ù", "ú", "ụ", "ủ", "ũ", "ư", "ừ", "ứ", "ự", "ử", "ữ",
+            "ỳ", "ý", "ỵ", "ỷ", "ỹ",
+            "đ",
+            "À", "Á", "Ạ", "Ả", "Ã", "Â", "Ầ", "Ấ", "Ậ", "Ẩ", "Ẫ", "Ă"
+            , "Ằ", "Ắ", "Ặ", "Ẳ", "Ẵ",
+            "È", "É", "Ẹ", "Ẻ", "Ẽ", "Ê", "Ề", "Ế", "Ệ", "Ể", "Ễ",
+            "Ì", "Í", "Ị", "Ỉ", "Ĩ",
+            "Ò", "Ó", "Ọ", "Ỏ", "Õ", "Ô", "Ồ", "Ố", "Ộ", "Ổ", "Ỗ", "Ơ"
+            , "Ờ", "Ớ", "Ợ", "Ở", "Ỡ",
+            "Ù", "Ú", "Ụ", "Ủ", "Ũ", "Ư", "Ừ", "Ứ", "Ự", "Ử", "Ữ",
+            "Ỳ", "Ý", "Ỵ", "Ỷ", "Ỹ",
+            "Đ", "ê", "ù", "à");
+        $unsigned = array("a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a"
+            , "a", "a", "a", "a", "a", "a",
+            "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "e",
+            "i", "i", "i", "i", "i",
+            "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o", "o"
+            , "o", "o", "o", "o", "o",
+            "u", "u", "u", "u", "u", "u", "u", "u", "u", "u", "u",
+            "y", "y", "y", "y", "y",
+            "d",
+            "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A", "A"
+            , "A", "A", "A", "A", "A",
+            "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E",
+            "I", "I", "I", "I", "I",
+            "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"
+            , "O", "O", "O", "O", "O",
+            "U", "U", "U", "U", "U", "U", "U", "U", "U", "U", "U",
+            "Y", "Y", "Y", "Y", "Y",
+            "D", "e", "u", "a");
+        return str_replace($signed, $unsigned, $str);
     }
 
 }

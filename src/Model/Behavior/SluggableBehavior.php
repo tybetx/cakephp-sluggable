@@ -21,7 +21,7 @@ class SluggableBehavior extends Behavior {
         'field' => 'title',
         'slug' => 'slug',
         'replacement' => '-',
-        'implementedMethods' => [
+        'implementedFinders' => [
             'slugged' => 'findSlug'
         ]
     ];

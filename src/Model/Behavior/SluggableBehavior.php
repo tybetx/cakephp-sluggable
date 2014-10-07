@@ -22,7 +22,8 @@ class SluggableBehavior extends Behavior {
         'slug' => 'slug',
         'replacement' => '-',
         'implementedFinders' => [
-            'slugged' => 'findSlug'
+            'slugged' => 'findSlug',
+            'check' => 'checkExist'
         ]
     ];
 
@@ -32,7 +33,17 @@ class SluggableBehavior extends Behavior {
      */
     public function slug(Entity $entity) {
         $config = $this->config();
-        $entity->set($config['slug'], Inflector::slug($this->_removeSign($entity->get($config['field'])), $config['replacement']));
+        $entity->set($config['slug'], $this->_doSlug($config, $entity->get($config['field'])));
+    }
+
+    /**
+     * 
+     * @param type $config
+     * @param type $title
+     * @return type
+     */
+    private function _doSlug($config, $title) {
+        return Inflector::slug($this->_removeSign($title), $config['replacement']);
     }
 
     /**
@@ -44,6 +55,16 @@ class SluggableBehavior extends Behavior {
     public function findSlug(Query $query, array $options) {
         $config = $this->config();
         return $query->where([$config['slug'] => $options['slug']]);
+    }
+
+    /**
+     * 
+     * @param Query $query
+     * @param array $options
+     * @return type
+     */
+    public function checkExist(Query $query, array $options) {
+        return $this->findSlug($query, $this->_doSlug($this->config(), $options)) != null;
     }
 
     /**

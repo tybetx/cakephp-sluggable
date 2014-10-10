@@ -1,0 +1,19 @@
+{
+    "name": "crabstudio/sluggablebehavior",
+    "description": "Remove sign, make friendly link before save to database ",
+    "type": "cakephp-behavior",
+    "author": [
+      {
+        "name": "crabstudio",
+        "email": "anhtuank7c@hotmail.com"
+      }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "cakephp/src/Model/Behavior": "*"
+    },
+    "require-dev": {
+      "cakephp/cakephp": "3.0.*-dev",
+      "phpunit/phpunit": "4.1.*"
+    }
+}

@@ -20,6 +20,10 @@
             "App\\src\\Model\\": "Behavior"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev"
+        }
+    }
+    
 }

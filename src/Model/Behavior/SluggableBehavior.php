@@ -118,7 +118,7 @@ class SluggableBehavior extends Behavior {
             "U", "U", "U", "U", "U", "U", "U", "U", "U", "U", "U",
             "Y", "Y", "Y", "Y", "Y",
             "D", "e", "u", "a");
-        return str_replace($signed, $unsigned, $str);
+        return mb_strtolower(str_replace($signed, $unsigned, $str));
     }
 
 }

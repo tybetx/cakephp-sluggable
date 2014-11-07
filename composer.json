@@ -1,6 +1,6 @@
 {
-    "name": "crabstudio/cakephp-sluggable-behavior",
-    "description": "CakePHP behavior to update slug field",
+    "name": "crabstudio/cakephp-sluggable",
+    "description": "CakePHP Sluggable behavior to update slug field",
     "license": "MIT",
     "type": "cakephp-behavior",
     "keyword": ["slug", "sluggable", "cakephp 3.x", "anhtuank7c", "crabstudio"],

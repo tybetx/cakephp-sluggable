@@ -2,7 +2,7 @@
     "name": "crabstudio/sluggablebehavior",
     "type": "behavior",
     "description": "Behavior for cakephp 3.x only",
-    "keywords": ["crabstudio", "sluggable", "behavior"],
+    "keywords": ["sluggable", "behavior", "cakephp 3.x", "anhtuank7c", "crabstudio"],
     "homepage": "https://github.com/crabstudio/",
     "license": "MIT",
     "authors": [

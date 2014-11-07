@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Model\Behavior;
+namespace Crabstudio\SluggableBehavior\Model\Behavior;
 
 use Cake\Event\Event;
 use Cake\ORM\Behavior;

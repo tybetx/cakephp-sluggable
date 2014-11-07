@@ -24,10 +24,5 @@
         "psr-4": {
             "Crabstudio\\Sluggable\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Crabstudio\\Sluggable\\Test\\": "tests"
-        }
     }
 }

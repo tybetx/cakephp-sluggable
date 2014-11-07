@@ -1,16 +1,15 @@
 {
-    "name": "crabstudio/sluggablebehavior",
-    "type": "behavior",
-    "description": "Behavior for cakephp 3.x only",
-    "keywords": ["sluggable", "behavior", "cakephp 3.x", "anhtuank7c", "crabstudio"],
-    "homepage": "http://crabstudio.info",
+    "name": "crabstudio/cakephp-sluggable-behavior",
+    "description": "CakePHP behavior to update slug field",
     "license": "MIT",
+    "type": "cakephp-behavior",
+    "keyword": ["slug", "sluggable", "cakephp 3.x", "anhtuank7c", "crabstudio"],
+    "home": "http://crabstudio.info",
     "authors": [
         {
             "name": "anhtuank7c",
             "email": "anhtuank7c@hotmail.com",
-            "homepage": "http://crabstudio.info",
-            "role": "Developer"
+            "home": "http://crabstudio.info"
         }
     ],
     "require": {
@@ -20,5 +19,17 @@
     "require-dev": {
         "cakephp/cakephp": "3.0.*-dev",
         "phpunit/phpunit": "4.1.*"
+    },
+    /*
+    "autoload": {
+        "psr-4": {
+            "Crabstudio\\Blame\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Crabstudio\\Blame\\Test\\": "tests"
+        }
     }
+    */
 }

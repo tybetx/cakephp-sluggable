@@ -6,13 +6,10 @@ Bỏ dấu Tiếng Việt và tạo friendly link trước khi lưu vào databas
 ## 1) Bước 1:
 Copy file SluggableBehavior vào thư mục /your_project/src/Model/Behavior/
 Hoặc sử dụng composer:
-Copy dòng sau vào composer.json của cakephp 3.x
+Mở commandline và cd di chuyển tới thư mục của dự án và thực thi lệnh
 ```
-"require-dev": {
-        "crabstudio/sluggablebehavior": "dev-master"
-}
+composer require crabstudio/cakephp-blame:dev-master
 ```
-Sau đó save lại và thực thi lệnh: composer update
 
 ## 2) Bước 2:
 Mở Model Table mà bạn muốn gán slug ra và thêm vào function initialize dòng sau:

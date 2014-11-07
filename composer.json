@@ -8,12 +8,23 @@
     "authors": [
         {
             "name": "anhtuank7c",
+            "email": "anhtuank7c@hotmail.com"
             "homepage": "http://crabstudio.info",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "cakephp/plugin-installer": "*"
+    },
+    "require-dev": {
+        "cakephp/cakephp": "3.0.*-dev",
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crabstudio\\SluggableBehavior\\": "src"
+        }
     },
     "autoload": {
         "classmap": [

@@ -20,16 +20,9 @@
         "cakephp/cakephp": "3.0.*-dev",
         "phpunit/phpunit": "4.1.*"
     },
-    /*
     "autoload": {
         "psr-4": {
-            "Crabstudio\\Blame\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Crabstudio\\Blame\\Test\\": "tests"
+            "Crabstudio\\Sluggable\\": "src"
         }
     }
-    */
 }

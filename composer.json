@@ -1,0 +1,23 @@
+{
+    "name": "crabstudio/sluggablebehavior",
+    "type": "behavior",
+    "description": "Behavior for cakephp 3.x only",
+    "keywords": ["crabstudio", "sluggable", "behavior"],
+    "homepage": "https://github.com/crabstudio/SluggableBehavior/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "anhtuank7c",
+            "homepage": "http://crabstudio.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "classmap": [
+            "."
+        ]
+    }
+}

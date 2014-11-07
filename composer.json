@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "anhtuank7c",
-            "email": "anhtuank7c@hotmail.com"
+            "email": "anhtuank7c@hotmail.com",
             "homepage": "http://crabstudio.info",
             "role": "Developer"
         }
@@ -25,10 +25,5 @@
         "psr-4": {
             "Crabstudio\\SluggableBehavior\\": "src"
         }
-    },
-    "autoload": {
-        "classmap": [
-            "."
-        ]
     }
 }

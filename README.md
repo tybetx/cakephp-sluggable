@@ -67,3 +67,8 @@ if($isExist)
 else
         save entity;
 ```
+
+## Sample result:
+
+Original: Nguyễn Anh Tuấn
+Slugged: nguyen-anh-tuan

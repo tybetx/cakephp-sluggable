@@ -71,4 +71,5 @@ else
 ## Sample result:
 
 Original: Nguyễn Anh Tuấn
+
 Slugged: nguyen-anh-tuan

@@ -8,7 +8,9 @@
 CakePHP 3.0 Behavior to remove signed utf-8 character and make friendly url
 
 ## Requirement:
+
 Cakephp 3.x
+
 PHP: >= 5.4.0
 
 ## Installation:
@@ -28,7 +30,7 @@ Or run the following command directly without changing your `composer.json`:
 
 `composer require crabstudio/cakephp-sluggable:dev-master`
 
-## Useage:
+## Usage:
 In your Model Table, insert this one into function initialize:
 
 ```

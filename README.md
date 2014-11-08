@@ -34,7 +34,7 @@ Or run the following command directly without changing your `composer.json`:
 In your Model Table, insert this one into function initialize:
 
 ```
-        $this->addBehavior('Sluggable', [
+        $this->addBehavior('Crabstudio/Sluggable.Sluggable', [
             'field' => 'title',
             'slug' => 'slug',
             'replacement' => '-', 
@@ -56,12 +56,12 @@ In your Model Table, insert this one into function initialize:
 ## Call function:
 ```
 Ex1: 
-$article = \Cake\ORM\TableRegistry::get('Articles')->find('slugged', ['slug' => 'Cach-lam-link-than-thien'])->first();
+$article = \Cake\ORM\TableRegistry::get('Articles')->find('slugged', ['slug' => 'how-to-make-friendly-url'])->first();
 Ex2:
 $this->loadModel('Articles');
-$article = $this->Articles->find('slugged', ['slug' => 'Cach-lam-link-than-thien'])->first();
+$article = $this->Articles->find('slugged', ['slug' => 'how-to-make-friendly-url'])->first();
 Ex3:
-$isExist = $this->Articles->find('check', ['slug' => 'Cach-lam-link-than-thien'])->first();
+$isExist = $this->Articles->find('check', ['slug' => 'how-to-make-friendly-url'])->first();
 if($isExist)
         do_some_thing;
 else

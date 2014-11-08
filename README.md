@@ -48,11 +48,11 @@ In your Model Table, insert this one into function initialize:
 ```
   field: name of field hold original string
   slug: name of field will save slugged string
-  replacement: the connector charactor
+  replacement: the connector character
   slugged: alias of function fundSlug, you can change to new one. VD: 'friendlyName' => 'findSlug'
   check: alias of function checkExist, you can change to new one. VD: 'checkExisting' => 'checkExist'
 ```
-Để gọi function slugged, check (gọi tới tên alias của function) này các bạn dùng như sau: (Các bạn có thể gọi bất cứ đâu dùng TableRegistry, hoặc loadModel)
+
 ## Call function:
 ```
 Ex1: 

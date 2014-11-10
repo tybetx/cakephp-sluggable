@@ -1,9 +1,5 @@
 #Sluggable
-
-[![Latest Stable Version](https://poser.pugx.org/crabstudio/cakephp-sluggable/v/stable.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable)
-[![Total Downloads](https://poser.pugx.org/crabstudio/cakephp-sluggable/downloads.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable)
-[![Latest Unstable Version](https://poser.pugx.org/crabstudio/cakephp-sluggable/v/unstable.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable)
-[![License](https://poser.pugx.org/crabstudio/cakephp-sluggable/license.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable)
+[![Latest Stable Version](https://poser.pugx.org/crabstudio/cakephp-sluggable/v/stable.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable) [![Total Downloads](https://poser.pugx.org/crabstudio/cakephp-sluggable/downloads.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable) [![Latest Unstable Version](https://poser.pugx.org/crabstudio/cakephp-sluggable/v/unstable.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable) [![License](https://poser.pugx.org/crabstudio/cakephp-sluggable/license.svg)](https://packagist.org/packages/crabstudio/cakephp-sluggable)
 
 CakePHP 3.0 Behavior to remove signed utf-8 character and make friendly url
 

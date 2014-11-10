@@ -49,7 +49,7 @@ In your Model Table, insert this one into function initialize:
   field: name of field hold original string
   slug: name of field will save slugged string
   replacement: the connector character
-  slugged: alias of function fundSlug, you can change to new one. VD: 'friendlyName' => 'findSlug'
+  slugged: alias of function findSlug, you can change to new one. VD: 'friendlyName' => 'findSlug'
   check: alias of function checkExist, you can change to new one. VD: 'checkExisting' => 'checkExist'
 ```
 

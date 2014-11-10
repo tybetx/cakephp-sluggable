@@ -18,7 +18,7 @@ Add the following lines to your application's `composer.json`:
 
 ```
     "require": {
-        "crabstudio/cakephp-sluggable:dev-master": "dev-master"
+        "crabstudio/cakephp-sluggable": "dev-master"
     }
 ```
 
